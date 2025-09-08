@@ -21,6 +21,10 @@ public class Category implements Serializable {
     @Column(name = "images", columnDefinition = "NVARCHAR(MAX)")
     private String images;
 
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
+
     // -------------------
     // Getters & Setters
     // -------------------

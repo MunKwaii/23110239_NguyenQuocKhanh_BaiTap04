@@ -24,7 +24,7 @@ public class CategoryController extends HttpServlet {
         List<Category> listCategory = categoryService.findAll();
         // tra du lieu v view
         req.setAttribute("listcate", listCategory);
-        RequestDispatcher rd = req.getRequestDispatcher("/views/admin/category-list.jsp");
+        RequestDispatcher rd = req.getRequestDispatcher("/views/category-list.jsp");
         rd.forward(req, resp);
     }
 
