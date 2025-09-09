@@ -1,4 +1,4 @@
-package com.example.JpaJpaDemo.controller;
+package com.example.JpaDemo.controller;
 
 import com.example.JpaDemo.dao.UserDao;
 import com.example.JpaDemo.dao.implement.UserDaoImpl;

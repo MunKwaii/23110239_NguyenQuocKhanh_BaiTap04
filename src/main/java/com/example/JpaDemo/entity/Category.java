@@ -21,6 +21,14 @@ public class Category implements Serializable {
     @Column(name = "images", columnDefinition = "NVARCHAR(MAX)")
     private String images;
 
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;

@@ -27,7 +27,7 @@ public class CategoryController extends HttpServlet {
         var account = (User) req.getSession().getAttribute("account");
         var categories = categoryService.listForHome(account);
 
-        req.setAttribute("listcate", categories);
+        req.setAttribute("categories", categories);
 
         RequestDispatcher rd = req.getRequestDispatcher("/views/category-list.jsp");
         rd.forward(req, resp);

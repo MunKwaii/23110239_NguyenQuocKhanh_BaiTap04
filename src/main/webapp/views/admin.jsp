@@ -35,7 +35,7 @@
                 <div class="list-group menu list-group-flush">
                     <a href="${pageContext.request.contextPath}/views/home.jsp" class="list-group-item">🏠 Trang chủ</a>
                     <a href="${pageContext.request.contextPath}/admin/home/categories" class="list-group-item">📂 Quản lý danh mục</a>
-                    <a href="${pageContext.request.contextPath}/admin/category/add" class="list-group-item">➕ Thêm danh mục</a>
+                    <a href="${pageContext.request.contextPath}/admin/home/categories/add" class="list-group-item">➕ Thêm danh mục</a>
                     <a href="${pageContext.request.contextPath}/logout" class="list-group-item text-danger">🚪 Đăng xuất</a>
                 </div>
             </div>
