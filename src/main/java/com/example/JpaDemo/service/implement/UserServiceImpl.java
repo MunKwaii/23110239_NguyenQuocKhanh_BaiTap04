@@ -1,9 +1,14 @@
 package com.example.JpaDemo.service.implement;
 
+import com.example.JpaDemo.configs.JPAConfig;
 import com.example.JpaDemo.dao.UserDao;
 import com.example.JpaDemo.dao.implement.UserDaoImpl;
+import com.example.JpaDemo.entity.Category;
 import com.example.JpaDemo.entity.User;
 import com.example.JpaDemo.service.UserService;
+import jakarta.persistence.EntityManager;
+
+import java.util.List;
 
 public class UserServiceImpl implements UserService {
     UserDao userDao = new UserDaoImpl();
@@ -54,4 +59,6 @@ public class UserServiceImpl implements UserService {
     public void insert(User user) {
         userDao.insert(user);
     }
+
+
 }

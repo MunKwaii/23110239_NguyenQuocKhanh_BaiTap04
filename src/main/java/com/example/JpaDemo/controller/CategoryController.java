@@ -1,6 +1,7 @@
 package com.example.JpaDemo.controller;
 
 import com.example.JpaDemo.entity.Category;
+import com.example.JpaDemo.entity.User;
 import com.example.JpaDemo.service.CategoryService;
 import com.example.JpaDemo.service.implement.CategoryServiceImpl;
 import jakarta.servlet.RequestDispatcher;
@@ -14,16 +15,20 @@ import java.io.IOException;
 import java.rmi.ServerException;
 import java.util.List;
 
-@WebServlet(urlPatterns = {"/admin/categories"})
+@WebServlet(urlPatterns = {"/admin/home/categories", "/manager/home/categories", "/user/home/categories"})
 public class CategoryController extends HttpServlet {
+    private final CategoryService categoryService = new CategoryServiceImpl();
 
     private static final long serialVersionUID = 1L;
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
-        CategoryService categoryService = new CategoryServiceImpl();
-        List<Category> listCategory = categoryService.findAll();
-        // tra du lieu v view
-        req.setAttribute("listcate", listCategory);
+
+
+        var account = (User) req.getSession().getAttribute("account");
+        var categories = categoryService.listForHome(account);
+
+        req.setAttribute("listcate", categories);
+
         RequestDispatcher rd = req.getRequestDispatcher("/views/category-list.jsp");
         rd.forward(req, resp);
     }

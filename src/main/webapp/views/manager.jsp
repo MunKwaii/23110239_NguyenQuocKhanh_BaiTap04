@@ -24,6 +24,7 @@
         <ul>
             <li><a href="#">📊 Xem báo cáo</a></li>
             <li><a href="#">👨‍💼 Quản lý nhân viên</a></li>
+            <li><a href="${pageContext.request.contextPath}/manager/home/categories" class="list-group-item">📂 Quản lý danh mục</a></li>
             <li><a href="${pageContext.request.contextPath}/logout" class="text-danger">🚪 Đăng xuất</a></li>
         </ul>
     </div>

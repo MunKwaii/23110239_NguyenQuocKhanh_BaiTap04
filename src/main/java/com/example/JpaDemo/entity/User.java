@@ -11,7 +11,6 @@ import java.util.List;
 public class User implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    // ---- Fields ----
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // AUTO_INCREMENT
     @Column(name = "id")
@@ -55,7 +54,6 @@ public class User implements Serializable {
     private List<Category> categories = new ArrayList<>();
 
 
-    // ---- Constructors ----
     public User() {
     }
 
@@ -73,7 +71,6 @@ public class User implements Serializable {
         this.createdDate = createdDate;
     }
 
-    // ---- Getters/Setters ----
     public int getId() { return id; }
     public void setId(int id) { this.id = id; }
 

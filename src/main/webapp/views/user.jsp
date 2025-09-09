@@ -23,6 +23,7 @@
     <hr>
     <a href="#">🛒 Xem sản phẩm</a>
     <a href="#">🛍 Giỏ hàng</a>
+    <a href="${pageContext.request.contextPath}/user/home/categories" class="list-group-item">📂 Quản lý danh mục</a>
     <a href="${pageContext.request.contextPath}/logout" class="btn btn-outline-danger m-2">🚪 Đăng xuất</a>
   </div>
 </div>

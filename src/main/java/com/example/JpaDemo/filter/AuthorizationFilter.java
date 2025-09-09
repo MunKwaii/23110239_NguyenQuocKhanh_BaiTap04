@@ -41,7 +41,7 @@ public class AuthorizationFilter implements Filter {
             return;
         }
 
-        if (path.startsWith(req.getContextPath() + "/user/") && role == 1 || role == 2) {
+        if (path.startsWith(req.getContextPath() + "/user/") && (role == 1 || role == 2)) {
             resp.sendError(HttpServletResponse.SC_FORBIDDEN, "Bạn không có quyền vào trang user");
             return;
         }
