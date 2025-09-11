@@ -12,8 +12,6 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
-import java.rmi.ServerException;
-import java.util.List;
 
 @WebServlet(urlPatterns = {"/admin/home/categories", "/manager/home/categories", "/user/home/categories"})
 public class CategoryController extends HttpServlet {

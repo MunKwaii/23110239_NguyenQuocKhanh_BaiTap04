@@ -99,4 +99,29 @@ public class UserDaoImpl implements UserDao {
             throw e;
         } finally { em.close(); }
     }
+
+    @Override
+    public void update(User user) {
+        EntityManager em = JPAConfig.getEntityManager();
+        EntityTransaction tx = em.getTransaction();
+        try {
+            tx.begin();
+            User managed = em.find(User.class, user.getId());
+            if (managed != null) {
+                managed.setFullName(user.getFullName());
+                managed.setPhone(user.getPhone());
+                managed.setAvatar(user.getAvatar());
+            }
+            tx.commit();
+        } catch (Exception e) {
+            if (tx.isActive()) tx.rollback();
+            throw e;
+        } finally {
+            em.close();
+        }
+    }
+    public User findById(int id) {
+        EntityManager em = JPAConfig.getEntityManager();
+        try { return em.find(User.class, id); } finally { em.close(); }
+    }
 }

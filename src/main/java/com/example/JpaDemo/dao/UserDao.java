@@ -10,5 +10,7 @@ public interface UserDao {
     boolean checkExistPhone(String phone);
     User findByEmail(String email);
     void updatePassword(int userId, String newPassword);
+    void update(User user);
+    User findById(int id);
 
 }

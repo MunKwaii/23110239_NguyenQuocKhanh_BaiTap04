@@ -60,5 +60,13 @@ public class UserServiceImpl implements UserService {
         userDao.insert(user);
     }
 
+    @Override
+    public void update(User user) {
+        userDao.update(user);
+    }
+    @Override
+    public User findById(int id) {
+        return userDao.findById(id);
+    }
 
 }
